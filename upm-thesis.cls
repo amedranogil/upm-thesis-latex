@@ -36,22 +36,20 @@
 
 
 % Option for printed version (twoside)
-\newif\ifprintedVersion
-\printedVersionfalse
-\DeclareOption{printed}{\printedVersiontrue}
-
-%%TODO pass options to report class
+%\newif\ifprintedVersion
+%\printedVersionfalse
+%\DeclareOption{printed}{\printedVersiontrue}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 %% Using report class as base.
 %%
 %%%%%
-%%TODO add the correct margins
-\ifprintedVersion
-	%Printed version is twoside
-	\PassOptionsToClass{a4paper,12pt,twoside,openright,titlepage}{report}
-\fi
+
+%\ifprintedVersion
+%	%Printed version is twoside
+%	\PassOptionsToClass{a4paper,12pt,twoside,openright,titlepage}{report}
+%\fi
 %\ifdigitalVersion
 	%digial version is oneside
 %	\PassOptionsToClass{a4paper,12pt,oneside,titlepage}{report}
@@ -72,8 +70,6 @@
 %%
 %% Chapter and section numbering
 %%
-% TODO: Check whether numbering up to the fourth level is okay. It is not
-% specified in the guidelines.
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
@@ -129,7 +125,7 @@
 \newcommand{\anno}[1]{\renewcommand{\@anno}{#1}}
 \anno{\the\year}
 
-%%TODO define command for degree of author and director
+%% command for degree of author and director
 \newcommand{\degreeIn}[1]{\\\emph{#1}}
 
 %% Renew this command if you wish to add Logo of your school.
@@ -144,17 +140,17 @@
 %%
 %%%%%%%%%%
 
-\newcommand\frontmatter{%
+\newcommand{\frontmatter}{%
     \cleardoublepage
   %\@mainmatterfalse
   \pagenumbering{roman}}
 
-\newcommand\mainmatter{%
+\newcommand{\mainmatter}{%
     \cleardoublepage
  % \@mainmattertrue
   \pagenumbering{arabic}}
 
-\newcommand\backmatter{%
+\newcommand{\backmatter}{%
   \if@openright
     \cleardoublepage
   \else
@@ -303,6 +299,17 @@
 \end{center}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Environments
+%%
+%%%%%%%%%
+
+%TODO: redefine Abstract environment (so it does not use titlepage, and custom presentation)
+
+%TODO: Create environment for acknowledgements
+
+%TODO: 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
