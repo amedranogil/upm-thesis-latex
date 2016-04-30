@@ -137,7 +137,7 @@
 \anno{\the\year}
 
 %% command for degree of author and director
-\newcommand{\degreeIn}[1]{\\\emph{#1}}
+\newcommand{\degreeIn}[1]{\\\textnormal{\emph{#1}}}
 
 %% Renew this command if you wish to add Logo of your school.
 \newcommand{\schoolLogo}{\hfill}
