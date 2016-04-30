@@ -40,6 +40,10 @@
 %\printedVersionfalse
 %\DeclareOption{printed}{\printedVersiontrue}
 
+\newif\ifcapitalize
+\capitalizefalse
+\DeclareOption{capitalize}{\capitalizetrue}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 %% Using report class as base.
@@ -72,6 +76,13 @@
 %%
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+
+\ifcapitalize
+	\RequirePackage{sectsty}
+	\RequirePackage{titlecaps}
+	\allsectionsfont{\MakeUppercase}
+\fi
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
