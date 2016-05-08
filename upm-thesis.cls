@@ -152,7 +152,7 @@
 %%%%%%%%%%
 
 \newcommand{\frontmatter}{%
-    \cleardoublepage
+  %  \cleardoublepage
   %\@mainmatterfalse
   \pagenumbering{roman}}
 
@@ -177,7 +177,8 @@
 %%
 %%%%%%
 
-\newcommand{\BlackTitlePage}
+%Blank page
+\newcommand{\BlankTitlePage}
 {\begin{titlepage}
 \thispagestyle{empty}
 \newpage
@@ -185,6 +186,22 @@
 \newpage
 \end{titlepage}
 }
+
+%custom Abstract
+\renewenvironment{abstract}
+ {\cleardoublepage\vspace*{\fill}\small
+  \begin{center}
+  \bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  \end{center}
+  \quotation}
+ {\endquotation\vspace*{\fill} }
+ 
+%Inscription
+\newenvironment{Inscription}
+{\cleardoublepage 
+\vspace*{\fill}
+\begin{flushright}\itshape
+}{\end{flushright} \vspace*{\fill}}
 
 %% Titlepage
 \renewcommand*{\maketitle}{%
@@ -231,7 +248,7 @@
 \end{titlepage}
 
 
-\BlackTitlePage
+\BlankTitlePage
 
 
 \begin{titlepage}
@@ -282,7 +299,7 @@
 \clearpage
 \end{titlepage}
 
-\BlackTitlePage
+\BlankTitlePage
 \restoregeometry
 }
 

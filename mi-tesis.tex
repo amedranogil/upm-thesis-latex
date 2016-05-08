@@ -1,0 +1,75 @@
+\documentclass[12pt,twoside,titlepage,capitalize,draft]{upm-thesis}
+\usepackage[utf8]{inputenc}
+\usepackage[english,spanish]{babel}
+\usepackage[titletoc,page]{appendix}
+\author{Alejandro Medrano Gil \degreeIn{Ingeniero en Informatica}}
+\title{Mi Tesis, con un titulo absudamente largo}
+\school{Escuela Técnica Superiror de Ingenieros en Telecomunicación}
+\department{Departamento de Formato Latex}
+\director{Yo}
+
+\begin{document}
+\maketitle
+
+%% Ejemplo de pagina del tribunal (consultar modelo)
+\begin{titlepage}
+\begin{flushleft}
+Tribunal nombrado por el Magnífico y Excelentísimo Sr. Rector de la Universidad
+Politécnica de Madrid, el día .. de ...... de .... .
+\end{flushleft}
+
+\begin{TribunalRole}{Presidente}
+	\TribunalMember{perico de los palotes}{su casa\newline en la vera del rio}
+	\TribunalMember{mengano }{laponia}
+\end{TribunalRole}
+\begin{TribunalRole}{Vocales}
+	\TribunalMember{perico de los palotes}{su casa\newline en la vera del rio}
+	\TribunalMember{mengano }{laponia}
+\end{TribunalRole}
+\begin{TribunalRole}{Suplentes}
+	\TribunalMember{perico de los palotes}{su casa\newline en la vera del rio}
+	\TribunalMember{mengano }{laponia}
+\end{TribunalRole}
+
+\begin{flushleft}
+Realizado el acto de defensa y lectura de la tesis el día .. de ...... de .... en Madrid,
+acuerda otorgarle la calificación de:
+\end{flushleft}
+
+\TribunalSignatures{El Presidente}{Los Vocales}{El Secretario}
+\end{titlepage}
+\BlankTitlePage
+
+\frontmatter
+\begin{otherlanguage}{english}
+\begin{abstract}
+   abstract-text
+\end{abstract}
+\end{otherlanguage}
+\begin{otherlanguage}{spanish}
+\begin{abstract}
+   texto-resumen
+\end{abstract}
+\end{otherlanguage}
+
+%\section*{Agradecimientos}
+%Agradezco a Titín y a Milú que hayan salvado el mundo en tantas ocasiones 
+
+\begin{Inscription}
+Everyone is a genius at least once a year. The real geniuses simply have their bright ideas closer together.
+
+---Georg Christoph Lichtenberg
+\end{Inscription}
+
+\tableofcontents
+
+\mainmatter
+\chapter{Regular Chapter}
+
+\backmatter
+\begin{appendices}
+\chapter{Some Appendix}
+The contents...
+\end{appendices}
+
+\end{document}
