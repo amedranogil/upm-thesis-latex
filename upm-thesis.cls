@@ -64,7 +64,7 @@
 
 
 \RequirePackage{tikz}
-\RequirePackage[textheight=22.5cm,textwidth=15cm]{geometry}
+\RequirePackage[twoside,bindingoffset=1cm,textheight=22.5cm,textwidth=15cm]{geometry}
 
 %%Draft
 \def\ifdraft{\ifdim\overfullrule>\z@
@@ -74,8 +74,8 @@
 %%
 %% Chapter and section numbering
 %%
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{2}
 
 \ifcapitalize
 	\RequirePackage{sectsty}
@@ -303,26 +303,65 @@
 \restoregeometry
 }
 
+%% short Titlepage
+\newcommand*{\makeshorttitle}{%
+\newgeometry{margin=3cm,marginpar=0cm}
+\begin{titlepage}
+
+\begin{center}
+
+\usefont{T1}{phv}{m}{n}
+\begin{centering}
+\LARGE{\textbf{UNIVERSIDAD POLIT\'{E}CNICA DE MADRID}}\\
+\end{centering}
+\vspace*{1.5cm}
+\begin{centering}
+\UPMLOGO
+\end{centering}
+\\
+\vspace*{1.5cm}
+\begin{centering}
+\large{\textbf{\@school}}
+\end{centering}
+\\
+\vspace*{\fill}
+\begin{centering}
+\large{\@title} 
+\end{centering}
+\\
+\vspace*{1cm}
+\begin{centering}
+\large{\textbf{\@thesisType}}
+\end{centering}  
+\\
+\vspace*{1cm}
+\begin{centering}
+\large{\@author} 
+\end{centering}
+\\
+\par\vspace*{\fill}
+\begin{centering}
+\large{\@anno} 
+\end{centering}
+\end{center}
+\clearpage
+\end{titlepage}
+}
 
 %% Tribunal Page
 \newenvironment{TribunalRole}[1]
-{\newcommand{\TribunalMember}[2]{ & ##1 & ##2 \\ &&\\}
-\medskip\noindent\begin{tabular}{p{2.5cm} p{5.5cm} p{5.5cm}}
+{\newcommand{\TribunalMember}[2]{ & ##1 & \small{##2} \\ &&\\}
+\medskip\noindent\begin{tabular}{p{2cm} p{4.5cm} p{8cm}}
 \textbf{#1}}
 {\end{tabular}\\}
 
 \newcommand{\TribunalSignatures}[3]
-{\vspace{1.5cm}\begin{center}
+{
+\begin{center}
 \begin{tabular}{p{4cm} p{4cm} p{4cm}}
- \begin{center}
- #1
- \end{center}&&\begin{center}
- #2
- \end{center}\\
- &&\\
- &\begin{center}
- #3
- \end{center}&\\
+
+ #1	&	& #2\\
+ 	&#3	&	\\
  \end{tabular}
 \end{center}
 }
